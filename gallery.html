@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Назва сторінки</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta charset="UTF-8">
+    <title>Галерея</title>
+    </head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button onclick="switchLang('ua')">UA</button>
+            <button onclick="switchLang('en')">EN</button>
+        </div>
+
+        <nav>
+            <a href="index.html" id="nav-home">Головна</a>
+            <a href="gallery.html" id="nav-gallery">Галерея</a>
+            <a href="contact.html" id="nav-poll">Опитування</a>
+        </nav>
+
+        <div class="block">
+            <h3 id="gal-hover">Наведіть мишку</h3>
+            <img src="assets/city.jpg" width="400" 
+                 onmouseover="mouseOverImg(this)" 
+                 onmouseout="mouseOutImg(this)">
+        </div>
+
+        <div class="block">
+            <h3 id="gal-choose">Вибір зображення (Radio)</h3>
+            <form>
+                <label><input type="radio" name="pics" onclick="setImage('forest.jpg')"> Фото 1</label>
+                <label><input type="radio" name="pics" onclick="setImage('sea.jpeg')"> Фото 2</label>
+                <label><input type="radio" name="pics" onclick="setImage('steppe.jpg')"> Фото 3</label>
+            </form>
+            <br>
+            <div style="text-align: center;">
+                <img id="galleryImg" src="assets/forest.jpg" style="width: 300px;">
+            </div>
+            <br>
+            <button onclick="resizeManual('big')" id="btn-zoom-in">Збільшити копію</button>
+            <button onclick="resizeManual('small')" id="btn-zoom-out">Зменшити копію</button>
+            <button onclick="resetImgSettings()" id="btn-reset">Повернути як було</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Назва сторінки</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+    
+    <meta charset="UTF-8">
+    <title>Головна</title>
+    </head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button onclick="switchLang('ua')">UA</button>
+            <button onclick="switchLang('en')">EN</button>
+        </div>
+
+        <nav>
+            <a href="index.html" id="nav-home">Головна</a>
+            <a href="gallery.html" id="nav-gallery">Галерея</a>
+            <a href="contact.html" id="nav-poll">Опитування</a>
+        </nav>
+
+        <div class="block">
+            <h3 id="quote-title">Цитата дня:</h3>
+            <p id="quoteDisplay" style="font-style: italic; font-size: 1.2em; color: #555;">Loading...</p>
+        </div>
+
+        <div class="block">
+            <h3 id="calc-title">Калькулятор (Лаб 3)</h3>
+            <input type="number" id="val1" placeholder="Число 1">
+            <input type="number" id="val2" placeholder="Число 2">
+            <br><br>
+            <button onclick="calculate('+')" id="calc-add">+ (doc.write)</button>
+            <button onclick="calculate('-')" id="calc-sub">- (doc.write)</button>
+            <button onclick="calculate('*')" id="calc-mult">* (alert)</button>
+            <button onclick="calculate('/')" id="calc-div">/ (alert)</button>
+        </div>
+    </div>
+    
+    <script src="js/script.js"></script>
+</body>
+</html>

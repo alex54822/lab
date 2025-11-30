@@ -1,0 +1,92 @@
+/* Загальні налаштування */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f7f6;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* Контейнер для центрування контенту */
+.container {
+    width: 90%;
+    max-width: 800px;
+    background: white;
+    padding: 20px;
+    margin-top: 20px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    border-radius: 8px;
+}
+
+/* Меню навігації */
+nav {
+    background-color: #2c3e50;
+    padding: 15px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    font-size: 1.1em;
+    transition: color 0.3s;
+}
+nav a:hover { color: #f39c12; }
+
+/* Кнопки перемикання мови */
+.lang-switch { text-align: right; margin-bottom: 10px; }
+.lang-switch button {
+    background: #3498db;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    cursor: pointer;
+    border-radius: 3px;
+    margin-left: 5px;
+}
+.lang-switch button:hover { background: #2980b9; }
+
+/* Блоки контенту */
+.block {
+    border: 1px solid #e1e1e1;
+    background: #fafafa;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 8px;
+}
+h3 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; display: inline-block;}
+
+/* Кнопки функціоналу */
+button {
+    background-color: #27ae60;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background 0.3s;
+}
+button:hover { background-color: #219150; }
+button[type="reset"] { background-color: #e74c3c; }
+button[type="reset"]:hover { background-color: #c0392b; }
+
+/* Поля вводу */
+input[type="text"], input[type="number"], textarea, select {
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-top: 5px;
+    width: 100%;
+    box-sizing: border-box; 
+}
+input[type="radio"], input[type="checkbox"] { width: auto; }
+
+img { transition: transform 0.3s ease; max-width: 100%; border-radius: 5px;}

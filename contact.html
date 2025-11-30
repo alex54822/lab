@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+<head>
+
+    <meta charset="UTF-8">
+    <title>Назва сторінки</title>
+    
+    <link rel="stylesheet" href="css/style.css">
+
+    <meta charset="UTF-8">
+    <title>Контакти</title>
+    </head>
+<body>
+    <div class="container">
+        <div class="lang-switch">
+            <button onclick="switchLang('ua')">UA</button>
+            <button onclick="switchLang('en')">EN</button>
+        </div>
+
+        <nav>
+            <a href="index.html" id="nav-home">Головна</a>
+            <a href="gallery.html" id="nav-gallery">Галерея</a>
+            <a href="contact.html" id="nav-poll">Опитування</a>
+        </nav>
+
+        <div class="block">
+            <h3 id="form1-title">Форма 1: Опитування</h3>
+            <form onsubmit="processForm(event)">
+                <label id="lbl-name">Ім'я:</label> 
+                <input type="text" id="inpName" required>
+                <br><br>
+
+                <label id="lbl-like">Подобається JS?</label><br>
+                <label><input type="radio" name="like" value="yes" checked> <span id="lbl-yes">Так</span></label>
+                <label><input type="radio" name="like" value="no"> <span id="lbl-no">Ні</span></label>
+                <br><br>
+
+                <label id="lbl-seen">Що бачили?</label><br>
+                <label><input type="checkbox" id="chkHome"> <span id="lbl-home">Головна</span></label>
+                <label><input type="checkbox" id="chkGallery"> <span id="lbl-gal">Галерея</span></label>
+                <br><br>
+
+                <label id="lbl-comment">Коментар:</label>
+                <textarea id="inpComment" rows="3"></textarea>
+                <br><br>
+
+                <button type="submit" id="btn-check">Перевірити і передати</button>
+                <button type="reset" id="btn-clear">Очистити</button>
+            </form>
+        </div>
+
+        <div class="block">
+            <h3 id="form2-title">Форма 2: Результат</h3>
+            <textarea id="resultBox" rows="5" readonly></textarea>
+            <br>
+            <button type="button" onclick="mailData()" id="btn-send">Відправити лист</button>
+        </div>
+    </div>
+
+    <script src="js/script.js"></script>
+</body>
+</html>
