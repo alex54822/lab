@@ -128,8 +128,8 @@ function calculate(action) {
 }
 
 // Логіка Галерї
-function mouseOverImg(img) { img.style.transform = "scale(1.3)"; }
-function mouseOutImg(img) { img.style.transform = "scale(1)"; }
+function mouseOverImg(img) { img.style.transform = "scale(1.5)"; img.style.zIndex = "100"}
+function mouseOutImg(img) { img.style.transform = "scale(1)"; img.style.zIndex = "auto"}
 
 function setImage(imageName) {
     const path = "assets/" + imageName; 

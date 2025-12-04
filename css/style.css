@@ -1,4 +1,3 @@
-/* Загальні налаштування */
 body {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: #f4f7f6;
@@ -52,6 +51,13 @@ nav a:hover { color: #f39c12; }
 }
 .lang-switch button:hover { background: #2980b9; }
 
+
+.block img {
+    position: relative; 
+    width: 300px;
+    transition: width 0.3s ease, transform 0.3s ease;
+}
+
 /* Блоки контенту */
 .block {
     border: 1px solid #e1e1e1;
@@ -60,7 +66,13 @@ nav a:hover { color: #f39c12; }
     margin-bottom: 20px;
     border-radius: 8px;
 }
-h3 { margin-top: 0; color: #2c3e50; border-bottom: 2px solid #3498db; padding-bottom: 10px; display: inline-block;}
+
+h3 { 
+    margin-top: 0; 
+    color: #2c3e50; 
+    border-bottom: 2px solid #3498db; 
+    padding-bottom: 10px; 
+    display: inline-block;}
 
 /* Кнопки функціоналу */
 button {
@@ -89,4 +101,8 @@ input[type="text"], input[type="number"], textarea, select {
 }
 input[type="radio"], input[type="checkbox"] { width: auto; }
 
-img { transition: transform 0.3s ease; max-width: 100%; border-radius: 5px;}
+img { 
+    transition: transform 0.3s ease; 
+    max-width: 100%; 
+    border-radius: 5px;
+}

@@ -22,20 +22,34 @@
             <a href="gallery.html" id="nav-gallery">Галерея</a>
             <a href="contact.html" id="nav-poll">Опитування</a>
         </nav>
-
+ 
+        <h3 id="gal-hover">Наведіть мишку</h3>
         <div class="block">
-            <h3 id="gal-hover">Наведіть мишку</h3>
-            <img src="assets/city.jpg" width="400" 
+            <img src="assets/city.jpg" width="300" 
+                 onmouseover="mouseOverImg(this)" 
+                 onmouseout="mouseOutImg(this)">
+            <img src="assets/forest.jpg" width="300" 
+                 onmouseover="mouseOverImg(this)" 
+                 onmouseout="mouseOutImg(this)">
+            <img src="assets/mountains.jpg" width="300" 
+                 onmouseover="mouseOverImg(this)" 
+                 onmouseout="mouseOutImg(this)">
+            <img src="assets/sea.jpeg" width="300" 
+                 onmouseover="mouseOverImg(this)" 
+                 onmouseout="mouseOutImg(this)">
+            <img src="assets/steppe.jpg" width="300" 
                  onmouseover="mouseOverImg(this)" 
                  onmouseout="mouseOutImg(this)">
         </div>
-
+        
+        <h3 id="gal-choose">Вибір зображення (Radio)</h3>
         <div class="block">
-            <h3 id="gal-choose">Вибір зображення (Radio)</h3>
             <form>
                 <label><input type="radio" name="pics" onclick="setImage('forest.jpg')"> Фото 1</label>
                 <label><input type="radio" name="pics" onclick="setImage('sea.jpeg')"> Фото 2</label>
                 <label><input type="radio" name="pics" onclick="setImage('steppe.jpg')"> Фото 3</label>
+                <label><input type="radio" name="pics" onclick="setImage('mountains.jpg')"> Фото 4</label>
+                <label><input type="radio" name="pics" onclick="setImage('city.jpg')"> Фото 5</label>
             </form>
             <br>
             <div style="text-align: center;">
