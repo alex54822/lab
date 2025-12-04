@@ -77,7 +77,8 @@ let currentQuoteIndex = Math.floor(Math.random() * quotesList.length);
 
 // Функція зміни мови 
 function switchLang(lang) {
-    // А. Перекладаємо статичні тексти
+
+    //Перекладаємо статичні тексти
     const texts = translations[lang];
     for (let key in texts) {
         const element = document.getElementById(key);
@@ -89,6 +90,8 @@ function switchLang(lang) {
             }
         }
     }
+
+
 
     // Перекладаємо плейсхолдери калькулятора
     const p1 = document.getElementById('val1');
