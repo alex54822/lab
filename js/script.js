@@ -1,4 +1,3 @@
-/* --- 1. Словник перекладу (Інтерфейс) --- */
 const translations = {
     ua: {
         "nav-home": "Головна",
@@ -64,7 +63,7 @@ const translations = {
     }
 };
 
-/* --- 2. Список цитат (UA + EN) --- */
+
 const quotesList = [
     { ua: "Знання — це сила.", en: "Knowledge is power." },
     { ua: "Код — це поезія.", en: "Code is poetry." },
@@ -73,10 +72,10 @@ const quotesList = [
     { ua: "Практика робить майстра.", en: "Practice makes perfect." }
 ];
 
-// Вибираємо випадковий індекс цитати один раз при старті
+// Вибираємо випадковий індекс цитати при старті
 let currentQuoteIndex = Math.floor(Math.random() * quotesList.length);
 
-/* --- 3. Функція зміни мови (Головна) --- */
+// Функція зміни мови 
 function switchLang(lang) {
     // А. Перекладаємо статичні тексти
     const texts = translations[lang];
@@ -91,7 +90,7 @@ function switchLang(lang) {
         }
     }
 
-    // Б. Перекладаємо плейсхолдери калькулятора
+    // Перекладаємо плейсхолдери калькулятора
     const p1 = document.getElementById('val1');
     const p2 = document.getElementById('val2');
     if (p1 && p2) {
@@ -99,21 +98,21 @@ function switchLang(lang) {
         p2.placeholder = texts["calc-ph2"];
     }
 
-    // В. Перекладаємо ЦИТАТУ (використовуємо збережений індекс)
+    // Перекладаємо ЦИТАТУ 
     const quoteBox = document.getElementById('quoteDisplay');
     if (quoteBox) {
         quoteBox.innerText = quotesList[currentQuoteIndex][lang];
     }
 }
 
-/* --- Запуск при завантаженні сторінки --- */
+// Запуск при завантаженні сторінки
 window.onload = function() {
     // Встановлюємо українську мову за замовчуванням
     switchLang('ua');
 };
 
 
-/* --- 4. Логіка Калькулятора (Лаб 3) --- */
+// Логіка Калькулятора
 function calculate(action) {
     let n1 = parseFloat(document.getElementById('val1').value);
     let n2 = parseFloat(document.getElementById('val2').value);
@@ -128,7 +127,7 @@ function calculate(action) {
     }
 }
 
-/* --- 5. Логіка Галереї (Лаб 4) --- */
+// Логіка Галерї
 function mouseOverImg(img) { img.style.transform = "scale(1.3)"; }
 function mouseOutImg(img) { img.style.transform = "scale(1)"; }
 
@@ -147,10 +146,9 @@ function resetImgSettings() {
     const img = document.getElementById('galleryImg');
     // Скидаємо стилі розміру
     img.style.width = "300px"; 
-    // src не чіпаємо, щоб не міняти картинку
 }
 
-/* --- 6. Логіка Форм (Лаб 5) --- */
+// Логіка Форм 
 function processForm(e) {
     e.preventDefault();
     const name = document.getElementById('inpName').value;
