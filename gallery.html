@@ -16,13 +16,22 @@
             <button onclick="switchLang('ua')">UA</button>
             <button onclick="switchLang('en')">EN</button>
         </div>
+  
 
         <nav>
             <a href="index.html" id="nav-home">Головна</a>
             <a href="gallery.html" id="nav-gallery">Галерея</a>
             <a href="contact.html" id="nav-poll">Опитування</a>
         </nav>
- 
+      <div class="block">
+    <h3>Перехід сторінками (Select)</h3>
+    <select id="pageSelect" onchange="goToPage(this.value)">
+        <option value="">Виберіть сторінку...</option>
+        <option value="index.html">Головна</option>
+        <option value="gallery.html">Галерея</option>
+        <option value="contact.html">Опитування</option>
+    </select>
+</div>
         
         <div class="block">
             <h3 id="gal-hover">Наведіть мишку</h3>

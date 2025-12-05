@@ -64,19 +64,35 @@ const translations = {
 };
 
 
-const quotesList = [
-    { ua: "Знання — це сила.", en: "Knowledge is power." },
-    { ua: "Код — це поезія.", en: "Code is poetry." },
-    { ua: "Просто зроби це.", en: "Just do it." },
-    { ua: "Сім разів відмір, один раз відріж.", en: "Measure twice, cut once." },
-    { ua: "Практика робить майстра.", en: "Practice makes perfect." }
+ 
+const dailyQuotesByDay = [
+    // 0: Неділя
+    { ua: "Неділя — час для відпочинку та роздумів.", en: "Sunday is a time for rest and reflection." }, 
+    // 1: Понеділок
+    { ua: "Понеділок — чудовий день, щоб почати з чистого аркуша.", en: "Monday is a great day to start with a blank slate." },
+    // 2: Вівторок
+    { ua: "Вівторок: збережіть імпульс, початий у понеділок.", en: "Tuesday: Keep the momentum going from Monday." },
+    // 3: Середа
+    { ua: "Середа — середина тижня, час для перезавантаження.", en: "Wednesday is the middle of the week, time to reboot." },
+    // 4: Четвер
+    { ua: "Четвер: ви майже там. Тримайте фокус!", en: "Thursday: You're almost there. Stay focused!" },
+    // 5: П'ятниця
+    { ua: "П'ятниця: успіх — це сума малих зусиль.", en: "Friday: Success is the sum of small efforts." },
+    // 6: Субота
+    { ua: "Субота: насолоджуйтесь плодами своєї праці.", en: "Saturday: Enjoy the fruits of your labor." }
 ];
 
-// Вибираємо випадковий індекс цитати при старті
-let currentQuoteIndex = Math.floor(Math.random() * quotesList.length);
+let currentQuoteIndex = 0; // Індекс цитати буде оновлюватися функцією setDailyQuote
+
+// Функція, яка встановлює цитату залежно від дня тижня
+function setDailyQuote() {
+    const today = new Date();
+    currentQuoteIndex = today.getDay(); 
+}
 
 // Функція зміни мови 
 function switchLang(lang) {
+
 
     //Перекладаємо статичні тексти
     const texts = translations[lang];
@@ -101,16 +117,20 @@ function switchLang(lang) {
         p2.placeholder = texts["calc-ph2"];
     }
 
-    // Перекладаємо ЦИТАТУ 
+
+    // Перекладаємо ЦИТАТУ, використовуючи індекс, прив'язаний до дня тижня
     const quoteBox = document.getElementById('quoteDisplay');
-    if (quoteBox) {
-        quoteBox.innerText = quotesList[currentQuoteIndex][lang];
+    if (quoteBox && dailyQuotesByDay[currentQuoteIndex]) {
+        quoteBox.innerText = dailyQuotesByDay[currentQuoteIndex][lang];
     }
 }
 
 // Запуск при завантаженні сторінки
 window.onload = function() {
-    // Встановлюємо українську мову за замовчуванням
+    // 1. Встановлюємо індекс цитати відповідно до поточного дня тижня
+    setDailyQuote(); 
+    
+    // 2. Встановлюємо українську мову за замовчуванням і відображаємо цитату
     switchLang('ua');
 };
 
@@ -130,8 +150,17 @@ function calculate(action) {
     }
 }
 
+
+function goToPage(url) {
+    if (url) {
+        window.location.href = url; // Здійснює перехід на URL
+    
+    }
+}
+
+
 // Логіка Галерї
-function mouseOverImg(img) { img.style.transform = "scale(1.5)"; img.style.zIndex = "100"}
+function mouseOverImg(img) { img.style.transform = "scale(3)"; img.style.zIndex = "100"}
 function mouseOutImg(img) { img.style.transform = "scale(1)"; img.style.zIndex = "auto"}
 
 function setImage(imageName) {
